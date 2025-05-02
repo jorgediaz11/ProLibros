@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      height: 100%;
+      font-family: 'Share Tech Mono', monospace;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: #00ffcc;
+      overflow: hidden;
+      position: relative;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at 50% 50%, rgba(0,255,204,0.05) 0%, transparent 70%),
+                  repeating-linear-gradient(0deg, rgba(0, 255, 204, 0.02) 0px, transparent 2px),
+                  repeating-linear-gradient(90deg, rgba(255, 0, 204, 0.015) 0px, transparent 2px);
+      animation: floatGrid 20s linear infinite;
+      z-index: -2;
+      opacity: 0.3;
+    }
+
+    body::after {
+      content: '';
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      background-image: radial-gradient(circle, rgba(0,255,204,0.2) 1px, transparent 1px);
+      background-size: 40px 40px;
+      animation: moveParticles 60s linear infinite;
+      z-index: -3;
+      opacity: 0.15;
+    }
+
+    @keyframes floatGrid {
+      0% { background-position: 0 0, 0 0, 0 0; }
+      100% { background-position: 100px 100px, 200px 100px, 300px 0px; }
+    }
+
+    @keyframes moveParticles {
+      0% { background-position: 0 0; }
+      100% { background-position: 1000px 500px; }
+    }
+
+    .login-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+    }
+
+    .login-box {
+      background: rgba(0, 0, 0, 0.85);
+      border: 1px solid #00ffcc;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px #00ffcc;
+      width: 100%;
+      max-width: 400px;
+      animation: flicker 1.5s infinite alternate;
+    }
+
+    @keyframes flicker {
+      0% { box-shadow: 0 0 10px #00ffcc; }
+      100% { box-shadow: 0 0 20px #00ffcc, 0 0 30px #00ffcc inset; }
+    }
+
+    .title {
+      text-align: center;
+      font-size: 2em;
+      color: #00ffcc;
+      margin-bottom: 30px;
+    }
+
+    .title span {
+      color: #ff00cc;
+    }
+
+    .input-group {
+      margin-bottom: 20px;
+    }
+
+    .input-group label {
+      display: block;
+      margin-bottom: 5px;
+      color: #00ffcc;
+      font-size: 14px;
+    }
+
+    .input-group input {
+      width: 100%;
+      padding: 12px;
+      background: #111;
+      border: 1px solid #00ffcc;
+      border-radius: 6px;
+      color: #00ffcc;
+      font-size: 16px;
+    }
+
+    .input-group input:focus {
+      outline: none;
+      border-color: #ff00cc;
+      box-shadow: 0 0 10px #ff00cc;
+    }
+
+    button {
+      width: 100%;
+      padding: 14px;
+      background: #00ffcc;
+      color: #000;
+      border: none;
+      border-radius: 6px;
+      font-weight: bold;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background: #00e6b8;
+      box-shadow: 0 0 10px #00ffcc;
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 13px;
+      color: #ccc;
+    }
+
+    .footer a {
+      color: #ff00cc;
+      text-decoration: none;
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
+    }
